@@ -1,0 +1,27 @@
+
+{% load static %}
+<section class="review-section spad set-bg" data-setbg="{% static 'img/review-bg.png' %}">
+    <div class="container">
+        <div class="section-title">
+            <div class="cata new">new</div>
+            <h2>Recent Reviews</h2>
+        </div>
+        <div class="row">
+            {% for i in data %}
+            <div class="col-lg-3 col-md-6">
+                <div class="review-item">
+                    
+                    <div class="review-cover set-bg" data-setbg="{% static 'img/review/' %}{{ i.id}}.jpg">
+                        <div class="score green">{{ i.rating }}</div>
+                    </div>
+                    <div class="review-text">
+                        <h5>{{ i.name }}</h5>
+                        <p>{{i.des }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
